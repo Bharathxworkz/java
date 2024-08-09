@@ -18,6 +18,7 @@ public class BankAccountRunner {
 
         savingsAccount.rateOfIntrest();
         System.out.println("The balance of account:" + savingsAccount.getBalance());
+<<<<<<< HEAD
 
 
         SavingsAccount momsAccount = new SavingsAccount(1000);
@@ -30,6 +31,8 @@ public class BankAccountRunner {
 
 
 
+=======
+>>>>>>> 50e55590d12db885b16d6810167155211d3c355f
     }
 
 }
