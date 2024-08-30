@@ -1,0 +1,4 @@
+1)polymorphism special type of function in java where inheritance occured there only polymorphism we can achive. by creating object with diffrent class of refrence in one object.
+2)constructor is an special type of function whic can be defined by same name of class and no parmametrs and no datatype.
+3)inheritance in java extracting data from parent class to child class is known as inheritance whic can be achive by special type keyword extend.
+4)grouping data in paricular method is known as encapulation which can be achived throuh  set and get metod.
