@@ -8,12 +8,15 @@ public class HallTicketRunner {
     public static void main(String[] args) {
         Exam exam = new Exam();
            exam.fees=1800;
-           HallTicket hallTicket =new HallTicket();
-           hallTicket.candidteName="Bharath L";
-           hallTicket.subject = "maths";
-           hallTicket.USN="1AT20CS015";
-           hallTicket.subjectCode="18CS034";
-          exam.allow(hallTicket);
+           HallTicket ticket =new HallTicket();
+           ticket.candidteName="Bharath L";
+           ticket.subject = "maths";
+           ticket.USN="1AT20CS015";
+           ticket.subjectCode="18CS034";
+          exam.allow(ticket);
+          Exam exam1=new SuplementaryExan();
+          exam1.fees=300;
+          exam1.allow(ticket);
 
 }
 }

@@ -5,7 +5,7 @@ import com.xworkz.patientapp.country.Country;
 public class Address {
 
 
-          Country country;
+        public  Country country;
 
           public Address(Country country){
              this.country=  country;

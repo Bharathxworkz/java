@@ -1,6 +1,6 @@
 package com.xworkz.bankapp.bankaccount;
 
-public class BankAccount {
+public class bankaccount {
     public double balance;
 
     public double getBalance() {
@@ -26,13 +26,5 @@ public class BankAccount {
             System.out.println("Withdraw successfull");
         }
         else System.out.println("Insufficient Funds");
-    }
-    public  void transfer(BankAccount  account,double amount){
-        System.out.println("transfer started");
-        this.withdraw(amount);
-        System.out.println("Amount is withdrawn from the account");
-        account.deposit(amount);
-        System.out.println("amount sent succesfully");
-        System.out.println("transfer ended");
     }
 }

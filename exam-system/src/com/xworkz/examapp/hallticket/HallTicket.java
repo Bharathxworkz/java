@@ -14,4 +14,5 @@ public class HallTicket {
         System.out.println("The usn of candidate :" + USN);
     }
 
+
 }

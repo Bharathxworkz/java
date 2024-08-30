@@ -5,8 +5,8 @@ import com.xworkz.patientapp.area.Area;
 public class City {
 
 
-        Area area ;
-        String cityName;
+      public  Area area ;
+       public String cityName;
 
 
         public City(Area area){
@@ -15,7 +15,7 @@ public class City {
 
 
       public  void getCityDetails(){
-          System.out.println("The Area name is "+ this.cityName);
+          System.out.println("The Area name is :"+ this.cityName);
             this.area.getAreadetails();
         }
 

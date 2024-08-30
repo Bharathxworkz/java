@@ -4,9 +4,10 @@ import com.xworkz.examapp.exam.Exam;
 import com.xworkz.examapp.hallticket.HallTicket;
 
 public class SuplementaryExan extends Exam {
-    int noOfAttempts = 1;
-    public  boolean allow(HallTicket ticket){
 
+    int noOfAttempts = 2;
+    public  boolean allow(HallTicket ticket){
+        System.out.println("The suplementary claas started");
 
         if(noOfAttempts>1){
             if (fees==300){
@@ -17,7 +18,7 @@ public class SuplementaryExan extends Exam {
             }
 
 
-        }else System.out.println();
+        }else System.out.println("you can't wrote an exam");
         return false;
     }
 }

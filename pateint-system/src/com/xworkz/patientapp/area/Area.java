@@ -2,9 +2,9 @@ package com.xworkz.patientapp.area;
 
 public class Area {
 
-    String areaName;
-    String streetName;
-    int streetNo;
+   public String areaName;
+  public   String streetName;
+   public int streetNo;
 
     public  void getAreadetails()
     {
