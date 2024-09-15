@@ -6,5 +6,5 @@ public class Items {
     public  static String book;
     public static String juice;
     public  static  String bat;
-    public static 
+    public static
 }

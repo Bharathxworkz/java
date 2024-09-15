@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="baa3de86-9e80-49ff-bacd-99e6676340b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../hospital-system/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/hospital-system.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/lib/lombok-1.18.34.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/src/com/xworkz/papp/HospitalRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/src/com/xworkz/papp/hospital/Hospital.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/src/com/xworkz/papp/hospital/impl/Hospitalimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospital-system/src/com/xworkz/papp/patient/Patient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/Nanu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/insurance-system/insurance-system.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice-sysetm/src/MaxAndMin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../redbus/redbus.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/lib/lombok-1.18.34.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/showapp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/src/com/xworkz/showapp/BookMyShowRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/src/com/xworkz/showapp/amazon/Amazon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../showapp/src/com/xworkz/showapp/paytm/Paytm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java" beforeDir="false" afterPath="$PROJECT_DIR$/../java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice-sysetm/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../practice-sysetm/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice-sysetm/src/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice-sysetm/src/Array.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice-sysetm/src/Pattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice-sysetm/src/Pattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-system/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-system/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test-system/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test-system/src/curd/items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test-system/src/curd/items/Items.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2lsuLZ6f33yJRlRfgL2D2U7dTAL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/P/IdeaProjects/java/java/amazon/src/Main.java"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="baa3de86-9e80-49ff-bacd-99e6676340b3" name="Changes" comment="" />
+      <created>1725981052499</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725981052499</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
