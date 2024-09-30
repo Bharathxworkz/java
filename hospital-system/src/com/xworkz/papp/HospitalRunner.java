@@ -7,8 +7,9 @@ import com.xworkz.papp.patient.Patient;
 import java.util.Scanner;
 
 public class HospitalRunner {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
+        System.out.println("Main started");
         Hospital hospital = new Hospitalimpl();
         Scanner scanner = new Scanner(System.in);
 
@@ -47,12 +48,10 @@ public class HospitalRunner {
         int newAge = scanner.nextInt();
         if (hospital.updatePatientAge(patientIdToUpdate, newAge)) {
             System.out.println("Patient age updated successfully.");
-        } else {
-            System.out.println("Patient not found.");
         }
 
         // Delete patient
-        System.out.println("Enter patient ID to delete");
+       System.out.println("Enter patient ID to delete");
         int patientIdToDelete = scanner.nextInt();
         if (hospital.deletePatient(patientIdToDelete)) {
             System.out.println("Patient deleted successfully.");
@@ -72,5 +71,6 @@ public class HospitalRunner {
 
         // Display patients again
         hospital.getPatient();
+        System.out.println("Main ended");
     }
 }

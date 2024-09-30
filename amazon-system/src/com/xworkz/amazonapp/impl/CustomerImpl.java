@@ -101,6 +101,7 @@ public class CustomerImpl implements Customer {
     }
 
     public boolean deleteProductDetails(int id) {
+        boolean isDeleted=false;
         for (int index = 0; index < product.length; index++) {
             if (product[index] != null && product[index].getProductId() == id) {
                 // Shift all elements to the left after the found index
@@ -108,10 +109,10 @@ public class CustomerImpl implements Customer {
                     product[j] = product[j + 1];
                 }
                 product[product.length - 1] = null; // Set last element to null after shifting
-                return true; // Return true when the product is successfully deleted
+                isDeleted=true; // Return true when the product is successfully deleted
             }
         }
-        return false; // Return false if product ID was not found
+        return isDeleted; // Return false if product ID was not found
     }
 
 }

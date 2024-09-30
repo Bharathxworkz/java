@@ -2,6 +2,7 @@ package com.xworkz.papp.hospital.impl;
 
 import com.xworkz.papp.hospital.Hospital;
 import com.xworkz.papp.patient.Patient;
+import exception.PatientIdNotFoundException;
 
 public class Hospitalimpl implements Hospital {
 
@@ -33,13 +34,25 @@ public class Hospitalimpl implements Hospital {
     }
 
     @Override
+
     public boolean updatePatientAge(int patientId, int newAge) {
+        System.out.println("Exception handling started");
         boolean isUpdated=false;
+        try {
+
+
         for (int i = 0; i < patients.length; i++) {
             if (patients[i] != null && patients[i].getPatientId() == patientId) {
                 patients[i].setAge(newAge);
                 isUpdated = true;
+            } else {
+                PatientIdNotFoundException patientIdNotFoundException = new PatientIdNotFoundException(patientId +" : patient id not found");
+                throw patientIdNotFoundException;
             }
+        }
+        } catch (PatientIdNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Exception handling ended");
         }
         return isUpdated;
     }

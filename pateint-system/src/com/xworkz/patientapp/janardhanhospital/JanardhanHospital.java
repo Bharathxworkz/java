@@ -1,6 +1,7 @@
 package com.xworkz.patientapp.janardhanhospital;
 import com.xworkz.patientapp.hospital.Hospital;
 import com.xworkz.patientapp.patientdetails.Patient;
+import exception.PayAmountException;
 
 import java.util.HashMap;
 
@@ -16,7 +17,10 @@ public class JanardhanHospital  {
             isPatientAdded = true;
             System.out.println("Child class ended");
         }
-        else System.out.println("Please Pay the Amount........");
+        else {
+            PayAmountException payAmountException = new PayAmountException("plz pay the amount");
+            throw payAmountException;
+        }
         return isPatientAdded;
     }
 
