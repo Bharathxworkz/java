@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class ok {
 
-    private static final String url = "jdbc:mysql://localhost:3306/sure";
+    private static final String url = "jdbc:mysql://localhost:3306/main";
     private static final String userName = "root";
     private static final String password = "9019633098";
 
@@ -16,7 +16,7 @@ public class ok {
         try {
             Connection connection = DriverManager.getConnection(url, userName, password);
             Statement statement = connection.createStatement();
-            String query = "select * from cricket";  // corrected typo here
+            String query = "select * from cricket1";  // corrected typo here
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 String name = resultSet.getString("name");

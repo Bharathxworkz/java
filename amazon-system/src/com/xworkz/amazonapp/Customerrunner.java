@@ -17,7 +17,6 @@ public class Customerrunner {
         int productId = scanner.nextInt();
         product.setProductId(productId);
 
-        // Consume the remaining newline
         scanner.nextLine();
 
         System.out.println("Enter the productName:");
@@ -98,7 +97,6 @@ public class Customerrunner {
             System.out.println("not found");
         }
 
-        // Delete product by ID
         System.out.println("Enter the ID to delete the product:");
         int id = scanner.nextInt();
         boolean isDeleted = customer.deleteProductDetails(id);

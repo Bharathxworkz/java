@@ -8,19 +8,21 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Correct Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         try {
             Connection connection = DriverManager.getConnection(url, userName, password);
-            Statement statement = connection.createStatement();
+            String query = String.format("INSERT INTO roommates(name, age,profesional, salary) VALUES (?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
             Scanner scanner = new Scanner(System.in);
 
             while (true) {
                 System.out.println("Enter the name of roommate:");
-                String name = scanner.nextLine();
+                String name = scanner.next();
+                scanner.nextLine();
                 System.out.println("Enter age of roommate:");
                 int age=scanner.nextInt();
                 scanner.nextLine();
@@ -33,16 +35,18 @@ public class Main {
                 System.out.println("Enter more data (Y/N):");
                 String choice = scanner.next();
 
-                // Correcting query and using user input
-                String query = String.format("INSERT INTO roommates(name, age,profesional, salary) VALUES ('%s', %d,'%s', %d)", name, age,profesional, salary);
-                statement.addBatch(query);
-
                 if (choice.equalsIgnoreCase("N")) {
                     break;
                 }
+                preparedStatement.setString(1,name);
+                preparedStatement.setInt(2,age);
+                preparedStatement.setString(3,profesional);
+                preparedStatement.setInt(4,salary);
+                preparedStatement.addBatch(query);
+
             }
 
-            int[] arr = statement.executeBatch(); // Execute all batched queries
+            int[] arr = preparedStatement.executeBatch();
 
 
             for (int i = 0; i < arr.length; i++) {
