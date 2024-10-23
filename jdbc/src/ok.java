@@ -16,7 +16,7 @@ public class ok {
         try {
             Connection connection = DriverManager.getConnection(url, userName, password);
             Statement statement = connection.createStatement();
-            String query = "select * from cricket1";  // corrected typo here
+            String query = "select * from batsman ";  // corrected typo here
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 String name = resultSet.getString("name");

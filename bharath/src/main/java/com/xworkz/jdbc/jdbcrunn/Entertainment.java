@@ -1,4 +1,4 @@
-package com.xworkz.jdbc;
+package com.xworkz.jdbc.jdbcrunn;
 
 import java.sql.*;
 

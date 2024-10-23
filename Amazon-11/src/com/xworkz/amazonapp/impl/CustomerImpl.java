@@ -2,8 +2,10 @@ package com.xworkz.amazonapp.impl;
 
 import com.xworkz.amazonapp.customer.Customer;
 import com.xworkz.amazonapp.product.Product;
+import jdk.nashorn.internal.parser.Scanner;
 
 public class CustomerImpl implements Customer {
+
     Product  product [] = new Product[2];
     int index;
     boolean isadded = true;

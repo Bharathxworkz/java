@@ -72,7 +72,7 @@ public class CustomerImpl implements Customer {
     public String getProductNameById(int id) {
         for (int i = 0; i < product.length; i++) {
             if (product[i] != null && product[i].getProductId() == id) {
-                return product[i].getProductName();
+                 product[i].getProductName();
             }
         }
 

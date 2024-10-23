@@ -69,7 +69,7 @@ public class Customerrunner {
         int getProductId = scanner.nextInt();
        String name = customer.getProductNameById(getProductId);
        if(name !=null) {
-           System.out.println("The patientName :" + name);
+           System.out.println("The product name :" + name);
        }else {
            System.out.println("not found");
        }
