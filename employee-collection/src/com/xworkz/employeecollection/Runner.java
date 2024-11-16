@@ -2,6 +2,7 @@ package com.xworkz.employeecollection;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -44,14 +45,17 @@ public class Runner {
                 .sorted(Comparator.comparing(EmployeeDto::getSalary).reversed())
                 .collect(Collectors.toList()));
 
-        Double secondHighestSalary = collection.stream()
-                .map(EmployeeDto::getSalary)
-                .distinct()
-                .sorted(Comparator.reverseOrder())
-                .skip(1)
-                .findFirst()
-                .orElse(null);
 
+        List<Double> distinctSalaries = new ArrayList<>();
+        collection.stream()
+                .sorted(Comparator.comparing(EmployeeDto::getSalary).reversed())
+                .forEach(employee -> {
+                    if (!distinctSalaries.contains(employee.getSalary())) {
+                        distinctSalaries.add(employee.getSalary());
+                    }
+                });
+
+        Double secondHighestSalary = (distinctSalaries.size() > 1) ? distinctSalaries.get(1) : null;
         System.out.println("Second Highest Salary: " + secondHighestSalary);
 
         List<EmployeeDto> salaryGreaterThan25000 = collection.stream()
@@ -66,12 +70,14 @@ public class Runner {
 
         System.out.println("Employees whose names start with 'B': " + startsWithB);
 
-        Set<String> duplicateNames = collection.stream()
-                .collect(Collectors.groupingBy(EmployeeDto::getName, Collectors.counting()))
-                .entrySet().stream()
-                .filter(entry -> entry.getValue() > 1)
-                .map(entry -> entry.getKey())
-                .collect(Collectors.toSet());
+        Set<String> duplicateNames = new HashSet<>();
+        Set<String> allNames = new HashSet<>();
+
+        collection.forEach(e -> {
+            if (!allNames.add(e.getName())) {
+                duplicateNames.add(e.getName());
+            }
+        });
 
         System.out.println("Duplicate employee names: " + duplicateNames);
     }
