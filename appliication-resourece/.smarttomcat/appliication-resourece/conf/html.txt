@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Click a word to view similar images</h1>
+        <p>Click <a href="#" id="openGallery" class="clickable-word">here</a> to see the images.</p>
+    </div>
+
+    <div id="gallery" class="hidden">
+        <h2>Nature Images</h2>
+        <div class="gallery-content">
+            <img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?fit=crop&w=400&h=400&q=80" alt="Nature Image 1">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=400&h=400&q=80" alt="Nature Image 2">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 3">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 4">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 5">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 6">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 7">
+                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?fit=crop&w=400&h=400&q=80" alt="Nature Image 8">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 9">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=400&h=400&q=80" alt="Nature Image 10">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?fit=crop&w=400&h=400&q=80" alt="Nature Image 11">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?fit=crop&w=400&h=400&q=80" alt="Nature Image 12">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?fit=crop&w=400&h=400&q=80" alt="Nature Image 13">
+                        <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?fit=crop&w=400&h=400&q=80" alt="Nature Image 14">
+                        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?fit=crop&w=400&h=400&q=80" alt="Nature Image 15">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=400&h=400&q=80" alt="Nature Image 16">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 17">
+                        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?fit=crop&w=400&h=400&q=80" alt="Nature Image 18">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 19">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?fit=crop&w=400&h=400&q=80" alt="Nature Image 20">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=400&h=400&q=80" alt="Nature Image 21">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?fit=crop&w=400&h=400&q=80" alt="Nature Image 22">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=400&h=400&q=80" alt="Nature Image 23">
+                        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?fit=crop&w=400&h=400&q=80" alt="Nature Image 24">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?fit=crop&w=400&h=400&q=80" alt="Nature Image 25">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?fit=crop&w=400&h=400&q=80" alt="Nature Image 26">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 27">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?fit=crop&w=400&h=400&q=80" alt="Nature Image 28">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?fit=crop&w=400&h=400&q=80" alt="Nature Image 29">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?fit=crop&w=400&h=400&q=80" alt="Nature Image 30">
+                        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?fit=crop&w=400&h=400&q=80" alt="Nature Image 31">
+                        <img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?fit=crop&w=400&h=400&q=80" alt="Nature Image 32">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?fit=crop&w=400&h=400&q=80" alt="Nature Image 33">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?fit=crop&w=400&h=400&q=80" alt="Nature Image 34">
+                        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?fit=crop&w=400&h=400&q=80" alt="Nature Image 35">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?fit=crop&w=400&h=400&q=800" alt="Nature Image 36">
+                        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?fit=crop&w=400&h=400&q=80" alt="Nature Image 37">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?fit=crop&w=400&h=400&q=80" alt="Nature Image 38">
+                        <img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?fit=crop&w=400&h=400&q=80" alt="Nature Image 39">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?fit=crop&w=400&h=400&q=80" alt="Nature Image 40">
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
