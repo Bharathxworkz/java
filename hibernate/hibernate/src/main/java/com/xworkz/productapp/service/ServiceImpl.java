@@ -29,4 +29,20 @@ public class ServiceImpl implements EcommerceService {
 return true;
 
     }
+
+    @Override
+    public ProductDto getProductById(int product_id) {
+        if(product_id>0){
+            System.out.println("the code sucessgfully getting details");
+        }
+        return ecommerceDao.getProductById(product_id) ;
+    }
+
+    @Override
+    public ProductDto updateProductDetails(int product_id, int price) {
+        if (product_id>0);{
+
+        }
+        return ecommerceDao.updateProductDetails(product_id,price);
+    }
 }
