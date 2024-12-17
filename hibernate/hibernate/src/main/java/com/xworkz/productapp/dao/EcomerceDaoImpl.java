@@ -10,11 +10,11 @@ import org.hibernate.cfg.Configuration;
 public class EcomerceDaoImpl implements EcommerceDao {
     @Override
     public boolean addProduct(ProductDto productDto) {
-/*
+
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(ProductDto.class);
         configuration.configure();
-         SessionFactory sessionFactory= configuration.buildSessionFactory();*/
+         SessionFactory sessionFactory= configuration.buildSessionFactory();
         Session session = SessionFactoryUtil.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(productDto);

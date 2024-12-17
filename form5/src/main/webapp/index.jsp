@@ -8,7 +8,7 @@
 <html>
 <body>
 
-    <a href="signUp.jsp">Sign up</a>
+    <a href="sign-up.jsp">Sign up</a>
     <a href="getTaxUser.jsp">Get Tax User</a>
      <a href="getAllUser">GetAllUser</a>
 </body>
