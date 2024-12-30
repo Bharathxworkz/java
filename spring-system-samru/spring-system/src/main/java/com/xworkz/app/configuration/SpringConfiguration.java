@@ -221,7 +221,7 @@ public class SpringConfiguration {
         return airport;
 
     }
-
+@Bean
     public Terminal getTerminal(){
         Terminal terminal=new Terminal();
         terminal.setTerminalName(terminal.getTerminalName());

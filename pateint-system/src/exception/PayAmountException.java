@@ -3,7 +3,7 @@ package exception;
 public class PayAmountException extends RuntimeException{
     public PayAmountException(String erorMessage){
 
-        System.out.println(erorMessage);
+        super(erorMessage);
 
     }
 }

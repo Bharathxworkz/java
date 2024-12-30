@@ -1,17 +1,28 @@
 package com.xworkz.productapp.dao;
 
 import com.xworkz.productapp.dto.ProductDto;
-import com.xworkz.productapp.util.SessionFactoryUtil;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+@Component
 public class EcomerceDaoImpl implements EcommerceDao {
+    @Autowired
+    private EntityManagerFactory factory;
     @Override
     public boolean addProduct(ProductDto productDto) {
 
-        Configuration configuration = new Configuration();
+
+
+            EntityManager entityManager = factory.createEntityManager();
+            entityManager.getTransaction().begin();
+            entityManager.persist(productDto);
+            entityManager.getTransaction().commit();
+            entityManager.close();
+            return true;
+
+        /*Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(ProductDto.class);
         configuration.configure();
          SessionFactory sessionFactory= configuration.buildSessionFactory();
@@ -21,16 +32,16 @@ public class EcomerceDaoImpl implements EcommerceDao {
         session.getTransaction().commit();
         session.close();
         SessionFactoryUtil.closeSessionFactory();
-        return true;
+        return true;*/
     }
 
-    @Override
+   /* @Override
     public ProductDto getProductById(int product_id) {
      //ProductDto productDto =  new Configuration().configure().addAnnotatedClass(ProductDto.class).buildSessionFactory().openSession().get(ProductDto.class,product_id);
-     /*   Configuration configuration = new Configuration();
+     *//*   Configuration configuration = new Configuration();
        configuration.addAnnotatedClass(ProductDto.class);
         configuration.configure();
-        SessionFactory sessionFactory= configuration.buildSessionFactory();*/
+        SessionFactory sessionFactory= configuration.buildSessionFactory();*//*
 
         Session session = SessionFactoryUtil.getSessionFactory().openSession();
         ProductDto dto =session.get(ProductDto.class,product_id);
@@ -39,10 +50,10 @@ public class EcomerceDaoImpl implements EcommerceDao {
 
         return dto;
     }public ProductDto updateProductDetails(int product_id, int price) {
-       /* Configuration configuration = new Configuration();
+       *//* Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(ProductDto.class);
         configuration.configure();
-        SessionFactory sessionFactory = configuration.buildSessionFactory();*/
+        SessionFactory sessionFactory = configuration.buildSessionFactory();*//*
 
 
         Session session = SessionFactoryUtil.getSessionFactory().openSession();
@@ -76,7 +87,7 @@ public class EcomerceDaoImpl implements EcommerceDao {
         }
 
         return dto;
-    }
+    }*/
 
 }
 

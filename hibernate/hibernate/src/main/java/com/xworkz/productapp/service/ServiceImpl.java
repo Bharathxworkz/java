@@ -1,48 +1,37 @@
 package com.xworkz.productapp.service;
 
-import com.xworkz.productapp.dao.EcomerceDaoImpl;
 import com.xworkz.productapp.dao.EcommerceDao;
 import com.xworkz.productapp.dto.ProductDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ServiceImpl implements EcommerceService {
 
-    EcommerceDao ecommerceDao = new EcomerceDaoImpl();
+    @Autowired
+    private EcommerceDao ecommerceDao;
 
     @Override
     public boolean validateAndSaveProduct(ProductDto dto) {
-        boolean productNameValid = false;
-        boolean productCategoryValid = false;
-        if (dto != null) {
-            if (dto.getProductName() != null && !dto.getProductName().isEmpty()) {
-                System.out.println("Product Name Validated!!....");
-                productNameValid = true;
-            }
-            if (dto.getProductCategory() != null && !dto.getProductCategory().isEmpty()) {
-                System.out.println("Product Category Validate!!.....");
-                productCategoryValid = true;
-            }
+        if (dto == null) {
+            System.out.println("ProductDto is null, cannot validate or save.");
+            return false;
         }
 
-        if (productNameValid == true && productCategoryValid == true) {
-           productNameValid= ecommerceDao.addProduct(dto);
+
+
+        boolean isProductNameValid = dto.getProductName() != null && !dto.getProductName().isEmpty();
+        if (!isProductNameValid) {
+            System.out.println("Product name is invalid.");
+            return false;
         }
-return true;
 
-    }
-
-    @Override
-    public ProductDto getProductById(int product_id) {
-        if(product_id>0){
-            System.out.println("the code sucessgfully getting details");
+        boolean isProductCategoryValid = dto.getProductCategory() != null && !dto.getProductCategory().isEmpty();
+        if (!isProductCategoryValid) {
+            System.out.println("Product category is invalid.");
+            return false;
         }
-        return ecommerceDao.getProductById(product_id) ;
-    }
 
-    @Override
-    public ProductDto updateProductDetails(int product_id, int price) {
-        if (product_id>0);{
-
-        }
-        return ecommerceDao.updateProductDetails(product_id,price);
+        return ecommerceDao.addProduct(dto);
     }
 }
