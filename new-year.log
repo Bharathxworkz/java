@@ -1,0 +1,1 @@
+2025-01-06 14:52:55 DEBUG com.xworkz.config.SpringWebIntilizer - No ContextLoaderListener registered, as createRootApplicationContext() did not return an application context

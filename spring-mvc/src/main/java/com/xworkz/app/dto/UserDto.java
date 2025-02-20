@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "spring_mvc_user_details")
+@Table(name = "spring_mvc")
 @NamedQuery(name = "getAllUsers" , query = "from UserDto dto")
 @NamedQuery(name = "deleteUserById" , query = "delete from UserDto user where user.id=:idd")
 @NamedQuery(name = "getUserById" , query = "select user from UserDto user where user.id=:idd")

@@ -6,10 +6,12 @@ public class Rstr {
         char ch ;
      for (int i = 0; i <str.length() ; i++) {
                 ch = str.charAt(i);
-                if (ch !=' ') {
+         rstr = ch + rstr;
+
+                /*if (ch !=' ') {
                     rstr = ch + rstr;
 
-                }
+                }*/
         }
         System.out.println(rstr);
 

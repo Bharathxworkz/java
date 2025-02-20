@@ -110,7 +110,7 @@
                         <a href="fetchUser?id=${dto.getId()}" class="edit-icon">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="delete?id=${dto.getId()}" class="delete-icon">
+                        <a href="delete/${dto.getId()}" class="delete-icon">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </td>

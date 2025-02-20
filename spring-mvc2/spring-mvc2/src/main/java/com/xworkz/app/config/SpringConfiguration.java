@@ -1,25 +1,23 @@
 package com.xworkz.app.config;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = "com.xworkz.app")
+@ComponentScan(basePackages = {"com.xworkz.app"})
 public class SpringConfiguration {
     public SpringConfiguration(){
 
+        System.out.println("SpringConfiguration started");
     }
-
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(){
-    LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
+    public LocalContainerEntityManagerFactoryBean getLocalContainerEntityManagerFactoryBean(){
+        LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
         bean.setPackagesToScan("com.xworkz.app.dto");
         bean.setDataSource(getDataSource());
         bean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
@@ -47,4 +45,3 @@ public class SpringConfiguration {
 
 
 }
-

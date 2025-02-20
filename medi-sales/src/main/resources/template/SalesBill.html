@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pharmacy Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            border: 0.3px solid black;
+            padding: 10px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 0.3px solid black;
+        }
+        .section {
+            width: 33.33%;
+            padding: 4px;
+            border: 0.3px solid black;
+            box-sizing: border-box;
+        }
+        h3, h4, p {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .total-summary {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">Best Pharmacy Software</div>
+    <div class="section-container">
+        <div class="section">
+            <h3>Jeqline Pharmacy</h3>
+            <p>Sakar - I, Near Mani Ratnam Complex, MG Road, Vadodara</p>
+            <p>Phone: 977955514 | Email: jeqline@gmail.com</p>
+            <p>GSTIN: 24AKPP1343N1ZR</p>
+        </div>
+
+        <div class="section">
+            <h3>Buyer's Details</h3>
+            <p><strong>Name:</strong> <span th:text="${sales[0].customerName}"></span></p>
+        </div>
+        <div class="section">
+            <h3>INVOICE</h3>
+            <p>Invoice No: <span th:text="${invoiceNumber}"></span></p>
+            <p>Date: <span th:text="${invoiceDate}"></span></p>
+        </div>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Product Name</th>
+            <th>Batch No.</th>
+            <th>HSN</th>
+            <th>MRP</th>
+            <th>Rate</th>
+            <th>Qty</th>
+            <th>Discount%</th>
+            <th>GST%</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sale, iterStat : ${sales}">
+            <td th:text="${iterStat.index + 1}"></td>
+            <td th:text="${sale.productName}"></td>
+            <td th:text="${sale.batchNumber}"></td>
+            <td th:text="${sale.hsn}"></td>
+            <td th:text="${sale.mrp} + ' Rs' "></td>
+            <td th:text="${sale.rate} + ' Rs' "></td>
+            <td th:text="${sale.qty}"></td>
+            <td th:text="${sale.discount} + ' %' "></td>
+            <td th:text="${sale.gst} + ' %' "></td>
+            <td th:text="${sale.amount} + ' Rs' "></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="total-summary">
+        Net Amount: <span th:text="${grandTotal} + ' Rs' "></span>
+    </div>
+    <div class="footer">
+        <div class="section">
+            <h4>Bank Details</h4>
+            <p>State Bank of India</p>
+            <p>Ac. No.: 30860782555 | IFSC: SBIN22ED1</p>
+        </div>
+        <div class="section">
+            <h4>Terms & Conditions</h4>
+            <p>Subject to Vadodara Jurisdiction</p>
+            <p>Advance Payment before Delivery.</p>
+        </div>
+        <div class="section">
+            <h4>For Jeqline Pharmacy</h4>
+            <p>Authorized Signatory</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
