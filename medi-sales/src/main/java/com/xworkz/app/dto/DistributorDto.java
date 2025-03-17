@@ -3,6 +3,7 @@ package com.xworkz.app.dto;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,4 +30,5 @@ public class DistributorDto {
     private LocalDate updatedDate;
     private Double gst;
     private Double amount;
+  /*  private List<String> vendorNames;*/
 }

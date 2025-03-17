@@ -1,10 +1,9 @@
 package com.xworkz.app.repository;
 
 import com.xworkz.app.dto.DistributorDto;
-import com.xworkz.app.dto.UserDto;
-import com.xworkz.app.dto.VendorDto;
+
 import com.xworkz.app.entity.DistributorEntity;
-import com.xworkz.app.entity.VendorEntity;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
-import java.util.Collections;
+
 import java.util.List;
 
 @Repository
@@ -67,6 +66,7 @@ public class DistributorRepositoryImpl implements DistributorRepository {
         entityManager.merge(distributorEntity);
         entityManager.getTransaction().commit();
         entityManager.close();
+
     }
 
 

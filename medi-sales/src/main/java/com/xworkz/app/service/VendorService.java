@@ -1,5 +1,6 @@
 package com.xworkz.app.service;
 
+import com.xworkz.app.dto.AddVendorDto;
 import com.xworkz.app.dto.UserDto;
 import com.xworkz.app.dto.VendorDto;
 import com.xworkz.app.entity.VendorEntity;
@@ -15,7 +16,7 @@ public interface VendorService {
     //boolean vendorSave(VendorDto vendorDto);
 
 
-    List<UserDto> getDistributorCp();
+    List<UserDto> getDistributorCp(int id);
 
     List<VendorDto> getVendor();
 
@@ -23,4 +24,6 @@ public interface VendorService {
     boolean deleteStockById(int id);
 
     public VendorEntity findOneByCustomerAndProduct(String customerName, String productName);
+    boolean save(AddVendorDto addVendorDto);
+    public List<AddVendorDto> getAllVendors(int id);
 }

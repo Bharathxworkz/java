@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII" %>
 <%@ page isELIgnored="false" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +10,26 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7f7, #b0e0e6);
             margin: 0;
             display: flex;
             flex-direction: column;
-            background-image:url("https://img.freepik.com/free-photo/copy-space-tablets-with-pills-desk_23-2148551010.jpg?ga=GA1.1.1027079804.1737700376&semt=ais_hybrid");
-            background-size: cover, contain; /* First image covers, second adjusts */
-                        background-repeat: no-repeat, no-repeat;
-                        background-attachment: fixed, fixed;
-                        background-position: top left, bottom right;
-                        background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
-                        color: #333;
-
         }
 
         /* Header Styling */
         .header {
-           background-color: darkcyan;
-                          color: white;
-                          padding: 10px 20px;
-                          display: flex;
-                          justify-content: space-between;
-                          align-items: center;
+            background: darkcyan;
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
         .header .logo img {
@@ -146,47 +147,58 @@
             text-decoration: underline;
             color: #f0f8ff;
         }
+        .circle-image{
+                             border-radius :50%;
+                             width:35px;
+                             height:35px;
+                 }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="logo">
+
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRabnDq7Kdm_k1R9ND6Oaf_SSXqMKZHkMlF4g&s" alt="Logo">
         </div>
         <nav class="nav-links">
-              <img height="35px" width="35px" src="view/${dto.getFileName()}" class="circle-image">
-                            <h2>Hello ${ fName } </h2>
-                            <a href="update?id=${dto.getId()}">Update Profile</a>
-                            <a href="viewprofile?id=${dto.getId()}">View Profile</a>
-            <a href="signup">Sign UP</a>
-            <a href="index">Home</a>
+            <img height="35px" width="35px" src="view/${dto.getFileName()}" class="circle-image">
+            <h3>Hello ${fName} </h3>
+            <h3><a href="update?id=${dto.getId()}">Update Profile</a></h3>
+            <h3><a href="viewprofile?id=${dto.getId()}">View Profile</a></h3>
+            <br>
         </nav>
     </header>
 
     <div class="sidebar" id="sidebar">
     <br>
     <div class="toggle-btn" onclick="toggleSidebar()">
-                <i class="fas fa-bars"></i> Menu
+                <i class="fas fa-bars"></i> Details
             </div>
         <ul>
-            <li><i class="fas fa-user"></i> <a href="createstock">Create Stock</a></li>
-            <li><i class="fas fa-calendar"></i> <a href="getallStocks">View Stock</a></li>
-             <li><i class="fas fa-user"></i> <a href="vendorr">VendorSalesBill</a></li>
+            <li><i class="fas fa-user"></i> <a href="addvendor/${dto.id}">Add Vendor</a></li>
+            <li><i class="fas fa-user"></i> <a href="getallvendors/${dto.id}">View vendors</a></li>
+            <li><i class="fas fa-calendar"></i> <a href="vendorr/${dto.id}">Vendor Purchase Bill</a></li>
+            <li><i class="fas fa-user"></i> <a href="addretailer/${dto.id}">Add Retailer</a></li>
+            <li><i class="fas fa-user"></i> <a href="getallretailerss/${dto.id}">view Retailers</a></li>
             <li><i class="fas fa-sign-out-alt"></i> <a href="index">LogOut</a></li>
+
         </ul>
 
     </div>
 
     <div class="main-content">
-        <h2>${add}</h2>
+        <h2>DISTRIBUTOR STOCK MANAGEMENT</h2>
+        <div>
+        <h3>${success}</h3>
+        </div>
     </div>
-
 
     <footer class="footer">
         <div>
             <a href="https://wa.me" target="_blank">WhatsApp</a>
             <a href="https://linkedin.com" target="_blank">LinkedIn</a>
         </div>
+        <div id="current-date-time"></div>
     </footer>
 
     <script>
@@ -195,7 +207,11 @@
             sidebar.classList.toggle('collapsed');
         }
 
-
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("current-date-time").innerText = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
     </script>
 </body>
 </html>

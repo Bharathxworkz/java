@@ -1,7 +1,9 @@
 package com.xworkz.app.service;
 
+import com.xworkz.app.dto.AddVendorDto;
 import com.xworkz.app.dto.UserDto;
 import com.xworkz.app.dto.VendorDto;
+import com.xworkz.app.entity.AddVendorEntity;
 import com.xworkz.app.entity.VendorEntity;
 import com.xworkz.app.repository.VendorRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +11,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 @Service
 @Slf4j
@@ -36,8 +39,8 @@ public class VendorServicImpl implements  VendorService {
 //    }
 
     @Override
-    public List<UserDto> getDistributorCp() {
-        return vendorRepository.getDistributorCp();
+    public List<UserDto> getDistributorCp(int id) {
+        return vendorRepository.getDistributorCp(id);
     }
 
     @Override
@@ -80,6 +83,20 @@ public class VendorServicImpl implements  VendorService {
     @Override
     public VendorEntity findOneByCustomerAndProduct(String customerName, String productName) {
         return vendorRepository.findOneByCustomerAndProduct(customerName,productName);
+    }
+
+    @Override
+    public boolean save(AddVendorDto addVendorDto) {
+        AddVendorEntity addVendorEntity = new AddVendorEntity();
+
+        BeanUtils.copyProperties(addVendorDto,addVendorEntity);
+
+        return vendorRepository.save(addVendorEntity);
+    }
+
+    @Override
+    public List<AddVendorDto> getAllVendors(int id) {
+        return vendorRepository.getAllVendors(id);
     }
 
 

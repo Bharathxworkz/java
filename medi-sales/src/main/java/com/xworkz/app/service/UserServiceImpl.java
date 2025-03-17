@@ -32,7 +32,8 @@ public class UserServiceImpl implements UserService {
     public boolean save(UserDto userDto) {
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(userDto, userEntity);
-        userEntity.setCreatedBy(userDto.getContactPerson());
+        userEntity
+                .setCreatedBy(userDto.getContactPerson());
         userEntity.setCreatedDate(LocalDate.now());
 
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));

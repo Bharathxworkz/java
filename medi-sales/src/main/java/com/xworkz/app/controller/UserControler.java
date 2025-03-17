@@ -94,7 +94,12 @@ public class UserControler {
         if (userDto.getEmail()!=null && userDto.getEmail().equalsIgnoreCase(email) ) {
             model.addAttribute("dto",userDto);
             session.setAttribute("loggedInUser",userDto);
+            model.addAttribute("fName",userDto.getContactPerson());
+            session.setAttribute("loggedInDistrbutorId",userDto.getId());
+            System.out.println("Store distributor Id is "+ session.getAttribute("loggedInDistrbutorId"));
+
             return "dashboard";
+
         } else {
             model.addAttribute("notfound", "Wrong Password");
             return "signin";

@@ -1,7 +1,10 @@
 package com.xworkz.app.repository;
 
+import com.xworkz.app.dto.AddVendorDto;
 import com.xworkz.app.dto.UserDto;
 import com.xworkz.app.dto.VendorDto;
+import com.xworkz.app.entity.AddVendorEntity;
+import com.xworkz.app.entity.UserEntity;
 import com.xworkz.app.entity.VendorEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+import java.util.Collections;
 import java.util.List;
 @Slf4j
 @Repository
@@ -28,8 +32,11 @@ public class VendorRepositoryImpl implements VendorRepository {
 //    }
 
     @Override
-    public List<UserDto> getDistributorCp() {
-        return entityManagerFactory.createEntityManager().createNamedQuery("getAllDistributor").setParameter("businessType", "wholesale").getResultList();
+    public List<UserDto> getDistributorCp(int id) {
+        return entityManagerFactory.createEntityManager()
+                .createNamedQuery("getVendorNamesByUserId")
+                .setParameter("id", id)
+                .getResultList();
 
     }
 
@@ -95,6 +102,24 @@ public class VendorRepositoryImpl implements VendorRepository {
         entityManager.getTransaction().commit();
         entityManager.close();
         return vendorEntity;
+    }
+
+    @Override
+    public boolean save(AddVendorEntity addVendorEntity) {
+        EntityManager entityManager= entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        UserEntity userEntity =entityManager.find(UserEntity.class,addVendorEntity.getMedisalesId());
+        addVendorEntity.setUserEntity(userEntity);
+        entityManager.persist(addVendorEntity);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        return true;
+    }
+
+    @Override
+    public List<AddVendorDto> getAllVendors(int id) {
+        return entityManagerFactory.createEntityManager().createNamedQuery("getAllVendors").setParameter("id",id).getResultList();
+
     }
 
 

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -87,10 +88,33 @@ public class PageController {
     public String getOtp(){
         return "otp";
     }
+    @GetMapping("addvendor/{id}")
+    public String addvndor(Model model, @PathVariable int id) {
+        model.addAttribute("add", id);
+        System.err.println(id);
+        return "addvendor";
+    }
+
 
     @GetMapping("forgotpassword")
     public String getForgotPasswordPage() {
         return "forgotpassword";
     }
+
+    @GetMapping("addretailer/{id}")
+    public String getForgotPasswordPa(Model model,@PathVariable int id) {
+        model.addAttribute("add",id);
+        return "addretailer";
+    }
+    @GetMapping("getallvendors")
+    public String getvrndors() {
+        return "getallvendors";
+    }
+    @GetMapping("getallretailers")
+    public String getretailers() {
+        return "getallretailers";
+    }
+
+
 }
 

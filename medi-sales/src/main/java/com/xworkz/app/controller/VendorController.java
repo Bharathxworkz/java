@@ -1,5 +1,6 @@
 package com.xworkz.app.controller;
 
+import com.xworkz.app.dto.AddVendorDto;
 import com.xworkz.app.dto.DistributorDto;
 
 import com.xworkz.app.dto.UserDto;
@@ -10,12 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +28,8 @@ public class VendorController {
     @Autowired
     VendorService vendorService;
 
-    @GetMapping(value = "vendorr")
-    public String getStockPage(HttpSession session, Model model) {
+    @GetMapping(value = "vendorr/{id}")
+    public String getStockPage(HttpSession session, Model model,@PathVariable int id) {
 
         List<VendorDto> vendorData = (List<VendorDto>) session.getAttribute("vendorList");
         if (vendorData == null) {
@@ -39,7 +38,7 @@ public class VendorController {
         }
 
         List<DistributorDto> dto = distributorService.getAllStocks();
-        List<UserDto> dto1 = vendorService.getDistributorCp();
+        List<UserDto> dto1 = vendorService.getDistributorCp(id);
 
         model.addAttribute("listOfStock", dto);
         model.addAttribute("vendor", vendorData);
@@ -99,4 +98,23 @@ public class VendorController {
 
         return "redirect:/vendorr";
     }
+
+    @PostMapping("/addvendoroo")
+    public String addvendorsave(@ModelAttribute AddVendorDto addVendorDto, Model model) {
+        boolean isSaved = vendorService.save(addVendorDto);
+
+        if (isSaved) {
+            model.addAttribute("add", "Vendor added successfully");
+        } else {
+            model.addAttribute("dto", addVendorDto);
+        }
+        return "addvendor";
+    }
+    @GetMapping("getallvendors/{id}")
+    public String getAllStocks(Model model,@PathVariable int id){
+        List<AddVendorDto> vendors = vendorService.getAllVendors(id);
+        model.addAttribute("listOfVendors",vendors);
+        return "getallvendors";
+    }
+
 }
